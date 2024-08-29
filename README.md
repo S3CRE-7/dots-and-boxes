@@ -1,4 +1,4 @@
-### Algorithm Project
+### Just a simple dots and boxes project I made long ago
 
 First install modules:
 
