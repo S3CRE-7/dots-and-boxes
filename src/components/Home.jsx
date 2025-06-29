@@ -1,34 +1,55 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 function Home() {
   const navigate = useNavigate();
+  const isMobile = useIsMobile();
+
   return (
-    <main>
-      <h1 className="text-8xl font-bold">Dots & Boxes</h1>
-      <div className="flex justify-center space-x-24 text-2xl mt-16 font-semibold">
-        <p>Two Players: </p>
-        <div className="space-x-5">
-          <button className="px-4" onClick={() => navigate('/4x4')}>
-            4x4
-          </button>
-          <button className="px-4" onClick={() => navigate('/6x6')}>
-            6x6
-          </button>
+    <div className="w-full">
+      {isMobile ? (
+        <div className="mx-8 text-7xl">
+          <h1 className="font-bold">Dots</h1>
+          <h1 className="font-bold text-right">& Boxes</h1>
+        </div>
+      ) : (
+        <h1 className="flex justify-center text-9xl font-bold">Dots & Boxes</h1>
+      )}
+      <div className="w-full md:flex md:justify-center">
+        <div className="md:grid md:align-items-center md:justify-items-center md:w-5/12">
+          <div className="md:flex md:justify-between md:items-center md:w-full mt-8 font-semibold">
+            <p className="mx-8 md:mx-0 text-2xl">Player vs Player: </p>
+            <div className="flex justify-center mt-3 md:mt-0 text-xl space-x-8 ">
+              <button
+                className="px-4 border-2 border-black rounded-lg"
+                onClick={() => navigate('/4x4')}>
+                4x4
+              </button>
+              <button
+                className="px-4 border-2 border-black rounded-lg"
+                onClick={() => navigate('/6x6')}>
+                6x6
+              </button>
+            </div>
+          </div>
+          <div className="md:flex md:justify-between md:items-center md:w-full mt-8 font-semibold">
+            <p className="mx-8 md:mx-0 text-2xl">Player vs AI: </p>
+            <div className="flex justify-center mt-3 md:mt-0 text-xl space-x-8 ">
+              <button
+                className="px-4 border-2 border-black rounded-lg"
+                onClick={() => navigate('/4x4-ai')}>
+                4x4
+              </button>
+              <button
+                className="px-4 border-2 border-black rounded-lg"
+                onClick={() => navigate('/6x6-ai')}>
+                6x6
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-      {/* <div className="flex justify-center space-x-24 text-2xl mt-8 font-semibold">
-        <p>Player vs PC: </p>
-        <div className="space-x-5">
-          <button className="px-4" onClick={() => navigate('/4x4-ai')}>
-            4x4
-          </button>
-          <button className="px-4" onClick={() => navigate('/6x6-ai')}>
-            6x6
-          </button>
-        </div>
-      </div> */}
-    </main>
+    </div>
   );
 }
 
