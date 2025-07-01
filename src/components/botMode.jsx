@@ -4,7 +4,7 @@ import DynamicGameBoard from './DynamicGameBoard';
 import botPlayer from '../lib/botStrategy';
 import { useParams } from 'react-router-dom';
 
-export default function GameAI() {
+export default function GamePvB() {
   const { boardSize } = useParams();
   const width = +boardSize.split('x')[0];
   const height = +boardSize.split('x')[1];
@@ -78,7 +78,7 @@ export default function GameAI() {
     }
   }, [boxScores]);
 
-  // Handling the AI's turn
+  // Handling the Bot's turn
   useEffect(() => {
     // Check if it's the Bot's turn (Player B) and the game is not over.
     if (!turnA && !end) {

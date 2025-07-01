@@ -33,16 +33,16 @@ function Home() {
             </div>
           </div>
           <div className="md:flex md:justify-between md:items-center md:w-full mt-8 font-semibold">
-            <p className="mx-8 md:mx-0 text-2xl">Player vs AI: </p>
+            <p className="mx-8 md:mx-0 text-2xl">Player vs Bot: </p>
             <div className="flex justify-center mt-3 md:mt-0 text-xl space-x-8 ">
               <button
                 className="px-4 border-2 border-black rounded-lg"
-                onClick={() => navigate('/ai/4x4')}>
+                onClick={() => navigate('/bot/4x4')}>
                 4x4
               </button>
               <button
                 className="px-4 border-2 border-black rounded-lg"
-                onClick={() => navigate('/ai/6x6')}>
+                onClick={() => navigate('/bot/6x6')}>
                 6x6
               </button>
             </div>
