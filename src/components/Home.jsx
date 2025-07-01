@@ -37,12 +37,12 @@ function Home() {
             <div className="flex justify-center mt-3 md:mt-0 text-xl space-x-8 ">
               <button
                 className="px-4 border-2 border-black rounded-lg"
-                onClick={() => navigate('/4x4-ai')}>
+                onClick={() => navigate('/ai/4x4')}>
                 4x4
               </button>
               <button
                 className="px-4 border-2 border-black rounded-lg"
-                onClick={() => navigate('/6x6-ai')}>
+                onClick={() => navigate('/ai/6x6')}>
                 6x6
               </button>
             </div>
