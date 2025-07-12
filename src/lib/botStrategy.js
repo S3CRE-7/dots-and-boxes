@@ -1,6 +1,15 @@
 // ducumentation is dog shit
 //! Note: This shit is impossible to beat, good luck 👍
 
+/**
+ * Calculates the "chain length" if this line is played.
+ * Used to determine how many boxes we might give away in a sequence.
+ * A lower chain length is better when we're forced to make an "unsafe" move.
+ * @param {string} lineId - The ID of the line being considered (e.g., '0-1-1').
+ * @param {Array} boxes - The board's box definitions.
+ * @param {object} clickedLines - Current state of all drawn lines.
+ * @returns {number} The number of boxes in the potential chain.
+ */
 function getChainLength(lineId, boxes, clickedLines) {
   //# DEBUG: Uncomment the console.log below to see detailed chain calculations for each unsafe move.
   //# console.log(`--- Calculating Chain Length for potential move: ${lineId} ---`);
@@ -142,8 +151,13 @@ function getAllVerticalLines(width, height) {
   return verticalLines;
 }
 
-// Gathers all lines that haven't been drawn on the board yet.
-
+/**
+ * Gathers all lines that haven't been drawn on the board yet.
+ * @param {number} width - Board width.
+ * @param {number} height - Board height.
+ * @param {object} clickedLines - Map of lines that are already drawn.
+ * @returns {Array<string>} List of available line IDs.
+ */
 function getAvailableMoves(width, height, clickedLines) {
   const allHorizontal = getAllHorizontalLines(width, height);
   const allVertical = getAllVerticalLines(width, height);
